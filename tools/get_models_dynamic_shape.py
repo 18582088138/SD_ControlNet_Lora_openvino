@@ -1,15 +1,18 @@
 from pathlib import Path
 import torch
 import os
+import sys
+sys.path.append("../")
+
 import argparse
 from torch.onnx import _export as torch_onnx_export
 from openvino.tools.mo import convert_model
 from openvino.runtime import serialize
 from diffusers import StableDiffusionControlNetPipeline, ControlNetModel, StableDiffusionPipeline
 
-hf_model_dir = "../models/HF_models"
-onnx_model_dir = "../models/onnx_models/dynamic"
-ir_model_dir = "../models/IR_models/FP32_dynamic"
+hf_model_dir = "./models/HF_models"
+onnx_model_dir = "./models/onnx_models/dynamic"
+ir_model_dir = "./models/IR_models/FP32_dynamic"
 if not os.path.exists(onnx_model_dir):
     os.makedirs(onnx_model_dir)
 
