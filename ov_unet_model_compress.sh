@@ -1,0 +1,1 @@
+python ov_dynamic/ov-sd-controlnet-unet-nncf-qat-compress.py --ema_device="cpu"     --use_kd     --model_id=models/HF_models/stable-diffusion-v1-5     --center_crop     --random_flip     --gradient_checkpointing     --dataloader_num_workers=2     --dataset_name="lambdalabs/pokemon-blip-captions"     --max_train_steps=1     --opt_init_steps=1    --output_dir=sd-quantized-pokemon
